@@ -71,6 +71,19 @@ const Users: CollectionConfig = {
       },
     },
     {
+      name: 'address',
+      label: 'Address',
+      type: 'text',
+      required: false, // Set as required if you want the address to be mandatory
+      // Add any specific access control if needed
+      // For example:
+      // access: {
+      //   read: adminsAndUser,
+      //   create: anyone,
+      //   update: adminsAndUser,
+      // },
+    },
+    {
       name: 'purchases',
       label: 'Purchases',
       type: 'relationship',

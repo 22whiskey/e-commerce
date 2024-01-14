@@ -430,6 +430,7 @@ export interface User {
   loginAttempts?: number | null;
   lockUntil?: string | null;
   password: string | null;
+  address: string
 }
 export interface Redirect {
   id: string;

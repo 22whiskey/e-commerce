@@ -28,6 +28,7 @@ type AuthContext = {
   resetPassword: ResetPassword
   forgotPassword: ForgotPassword
   status: undefined | 'loggedOut' | 'loggedIn'
+  address: string
 }
 
 const Context = createContext({} as AuthContext)

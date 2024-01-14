@@ -17,6 +17,7 @@ type FormData = {
   email: string
   password: string
   passwordConfirm: string
+  address: string // Add address to the FormData type
 }
 
 const CreateAccountForm: React.FC = () => {
@@ -113,6 +114,14 @@ const CreateAccountForm: React.FC = () => {
         register={register}
         validate={value => value === password.current || 'The passwords do not match'}
         error={errors.passwordConfirm}
+      />
+      <Input
+        name="address"
+        label="Address"
+        required
+        register={register}
+        error={errors.address}
+        type="text"
       />
       <Button
         type="submit"

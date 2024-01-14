@@ -16,6 +16,7 @@ type FormData = {
   name: string
   password: string
   passwordConfirm: string
+  address: string
 }
 
 const AccountForm: React.FC = () => {
@@ -61,6 +62,7 @@ const AccountForm: React.FC = () => {
             name: json.doc.name,
             password: '',
             passwordConfirm: '',
+            address: json.doc.address, // Ensure this is the updated address
           })
         } else {
           setError('There was a problem updating your account.')
@@ -86,6 +88,7 @@ const AccountForm: React.FC = () => {
         name: user.name,
         password: '',
         passwordConfirm: '',
+        address: user.address || '',
       })
     }
   }, [user, router, reset, changePassword])
@@ -104,7 +107,7 @@ const AccountForm: React.FC = () => {
             type="email"
           />
           <Input name="name" label="Name" register={register} error={errors.name} />
-
+          <Input name="address" label="Address" register={register} error={errors.address} />
           <p>
             {'Change your account details below, or '}
             <button

@@ -8,6 +8,7 @@ export const ME_QUERY = `query {
       name
       ${CART}
       roles
+      address
     }
     exp
   }
