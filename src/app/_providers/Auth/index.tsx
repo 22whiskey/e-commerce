@@ -28,13 +28,14 @@ type AuthContext = {
   resetPassword: ResetPassword
   forgotPassword: ForgotPassword
   status: undefined | 'loggedOut' | 'loggedIn'
-  address: string
+  address: User | null
 }
 
 const Context = createContext({} as AuthContext)
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>()
+  const [address, setAddress] = useState<User | null>(null)
 
   // used to track the single event of logging in or logging out
   // useful for `useEffect` hooks that should only run once
@@ -207,6 +208,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         resetPassword,
         forgotPassword,
         status,
+        address,
       }}
     >
       {children}
